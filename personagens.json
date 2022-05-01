@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "Reinhard von Lohengramm",
+    "idade": 25,
+    "foto": "https://yt3.ggpht.com/ytc/AKedOLQuIF0W7mJBV0myfG719tOiRyBnZuIl9pX2NtVb=s900-c-k-c0x00ffffff-no-rj",
+    "resumo": "Império Galáctico"
+  },
+  {
+    "nome": "Yang Wen-Li",
+    "idade": 33,
+    "foto": "https://i.pinimg.com/originals/94/21/0f/94210f890735a571079ce9d52a4f2999.jpg",
+    "resumo": "Aliança dos Planetas Livres"
+  },
+  {
+    "nome": "Siegfried Kircheis",
+    "idade": 22,
+    "foto": "https://static.wikia.nocookie.net/yang-wenli/images/d/de/Kircheis.png/revision/latest?cb=20101014071830",
+    "resumo": "Império Galáctico"
+  },
+  {
+    "nome": "Julian Mintz",
+    "idade": 18,
+    "foto": "https://static.wikia.nocookie.net/yang-wenli/images/5/5c/Julian_3.png/revision/latest?cb=20101017224430",
+    "resumo": "Aliança dos Planetas Livres"
+  }
+]
