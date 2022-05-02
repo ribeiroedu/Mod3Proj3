@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "API Personagens",
-    "description": "API para CRUD de personagens da série Legend of the Galactic Heroes",
+    "title": "API Ricky e Morty",
+    "description": "API para CRUD de personagens da série Ricky e Morty",
     "termsOfService": "",
     "contact": {
       "email": "ed.almeidaribeiro@gmail.com"
