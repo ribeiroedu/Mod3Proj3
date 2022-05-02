@@ -48,29 +48,29 @@ const findCharacterByIdadeController = async (req, res) => {
 };
 
 const addCharacterController = async (req, res) => {
-  const personagem = req.body;
+  const character = req.body;
 
   if (
-    !personagem ||
-    !personagem.nome ||
-    !personagem.idade ||
-    !personagem.foto ||
-    !personagem.resumo
+    !character ||
+    !character.nome ||
+    !character.idade ||
+    !character.foto ||
+    !character.resumo
   ) {
     return res.status(400).send({
       message:
-        'Você não preencheu todos os dados para adicionar um novo personagem à lista!',
+        'Você não preencheu todos os dados para adicionar um novo character à lista!',
     });
   }
 
-  const newCharacter = await charactersService.addCharacterService(personagem);
+  const newCharacter = await charactersService.addCharacterService(character);
 
   res.send(newCharacter);
 };
 
 const updateCharacterController = async (req, res) => {
   const idParam = req.params.id;
-  const personagemEdit = req.body;
+  const characterEdit = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(idParam)) {
     res.status(400).send({ message: 'ID inválido!' });
@@ -86,20 +86,20 @@ const updateCharacterController = async (req, res) => {
   }
 
   if (
-    !personagemEdit ||
-    !personagemEdit.nome ||
-    !personagemEdit.idade ||
-    !personagemEdit.foto ||
-    !personagemEdit.resumo
+    !characterEdit ||
+    !characterEdit.nome ||
+    !characterEdit.idade ||
+    !characterEdit.foto ||
+    !characterEdit.resumo
   ) {
     return res.status(400).send({
-      message: 'Você não preencheu todos os dados para editar o personagem!',
+      message: 'Você não preencheu todos os dados para editar o character!',
     });
   }
 
   const updatedCharacter = await charactersService.updateCharacterService(
     idParam,
-    personagemEdit,
+    characterEdit,
   );
 
   res.send(updatedCharacter);
