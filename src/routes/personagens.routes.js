@@ -1,26 +1,31 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../../swagger.json');
 
-const personagensController = require("../controllers/personagens.controller");
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
-router.get("/", personagensController.homePersonagemController);
+const personagensController = require('../controllers/personagens.controller');
+
+router.get('/', personagensController.homePersonagemController);
 router.get(
-  "/find-personagens",
-  personagensController.findPersonagensController
+  '/find-personagens',
+  personagensController.findPersonagensController,
 );
 router.get(
-  "/find-personagem/:id",
-  personagensController.findPersonagemByIdController
+  '/find-personagem/:id',
+  personagensController.findPersonagemByIdController,
 );
 router.get(
-  "/find-personagem-idade/:idade",
-  personagensController.findPersonagemByIdadeController
+  '/find-personagem-idade/:idade',
+  personagensController.findPersonagemByIdadeController,
 );
 
-router.post("/add", personagensController.addPersonagemController);
+router.post('/add', personagensController.addPersonagemController);
 
-router.put("/update/:id", personagensController.updatePersonagemController);
+router.put('/update/:id', personagensController.updatePersonagemController);
 
-router.delete("/delete/:id", personagensController.deletePersonagemController);
+router.delete('/delete/:id', personagensController.deletePersonagemController);
 
 module.exports = router;

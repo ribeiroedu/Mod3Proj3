@@ -1,4 +1,4 @@
-const Personagem = require("../models/Personagem");
+const Personagem = require('../models/Personagem');
 
 const findPersonagensService = async () => {
   const personagens = await Personagem.find();
@@ -23,7 +23,7 @@ const addPersonagemService = async (personagem) => {
 const updatePersonagemService = async (id, personagemEdited) => {
   const personagemAtualizado = await Personagem.findByIdAndUpdate(
     id,
-    personagemEdited
+    personagemEdited,
   );
   return personagemAtualizado;
 };
