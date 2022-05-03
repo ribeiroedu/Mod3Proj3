@@ -36,7 +36,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Characters"
+                    "$ref": "#/components/schemas/Character"
                   }
                 }
               }
@@ -68,7 +68,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Characters"
+                  "$ref": "#/components/schemas/Character"
                 }
               }
             }
@@ -85,7 +85,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Characters"
+                "$ref": "#/components/schemas/Character"
               },
               "examples": {
                 "Characters": {
@@ -109,7 +109,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Characters"
+                  "$ref": "#/components/schemas/Character"
                 }
               }
             }
@@ -134,7 +134,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Characters"
+                "$ref": "#/components/schemas/Character"
               },
               "examples": {
                 "Characters": {
@@ -157,7 +157,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Characters"
+                  "$ref": "#/components/schemas/Character"
                 }
               }
             }
@@ -184,6 +184,114 @@
           },
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/create": {
+      "post": {
+        "summary": "Criar um novo usuário",
+        "description": "Rota responsável por criar um novo usuário",
+        "tags": ["Users"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Character"
+              },
+              "examples": {
+                "Users": {
+                  "value": {
+                    "name": "admin",
+                    "username": "adminlogin",
+                    "email": "admin@gmail.com",
+                    "password": "12345",
+                    "photo": "link da foto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Buscar todos os usuários",
+        "description": "Rota responsável por buscar todos os usuários",
+        "tags": ["Users"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Entrar na API do Rick and Morty",
+        "description": "Rota responsável por fazer o login de um user cadastrado",
+        "tags": ["Auth"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "Characters": {
+                  "value": {
+                    "email": "admin@gmail.com",
+                    "password": "12345"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
           }
         }
       }
