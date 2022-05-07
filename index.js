@@ -16,3 +16,5 @@ app.use('/characters', characters);
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
+//teste de comentário
